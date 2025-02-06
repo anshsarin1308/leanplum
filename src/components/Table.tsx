@@ -1,5 +1,3 @@
-
-import { tr } from 'date-fns/locale';
 import { VNode } from 'vue';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
@@ -15,11 +13,6 @@ export class Table<T> extends Vue {
 
   @Prop({ required: true })
   readonly items!: Array<T>;
-
-  @Prop({ default:null } )
-  readonly onRowClick!: (item: T) => void 
-
-  
 
   render() {
     return (
@@ -40,14 +33,11 @@ export class Table<T> extends Vue {
 
   private renderRow(item: T, index: number) {
     return (
-       <tr key={index}>
+      <tr key={index} onClick={() => this.$emit('row-click', item)}>
         {this.columns.map((column, columnIndex) => (
-          <td key={columnIndex} onClick={()=>{this.onRowClick(item)}}>{column.render(item)} </td>
+          <td key={columnIndex}>{column.render(item)}</td>
         ))}
       </tr>
     );
   }
 }
-
-
-

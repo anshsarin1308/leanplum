@@ -1,30 +1,24 @@
-
-
-
 import { Component, Vue } from 'vue-property-decorator';
 import './Home.scss';
 import { generateSampleData, UserEntity } from '../models/UsersEntity';
 import { ColumnDescriptor, Table } from '../components/Table';
 import { VNode } from 'vue';
+import UserModal from './UserModal.vue';
 
-@Component({ name: 'Home' })
+@Component({
+  name: "Home",
+  components: {
+    UserModal,
+  }
+})
 export default class Home extends Vue {
   users: Array<UserEntity> = generateSampleData();
-  selectedUser: UserEntity | null = null;  
+  selectedUser: UserEntity | null = null;
 
   columns: Array<ColumnDescriptor<UserEntity>> = [
-    {
-      title: 'User ID',
-      render: this.renderFunc,
-    },
-    {
-      title: 'Location',
-      render: this.renderLocation,
-    },
-    {
-      title: 'Devices',
-      render: this.renderDevices,
-    },
+    { title: 'User ID', render: this.renderFunc },
+    { title: 'Location', render: this.renderLocation },
+    { title: 'Devices', render: this.renderDevices },
   ];
 
   private renderFunc(item: UserEntity): VNode {
@@ -39,48 +33,32 @@ export default class Home extends Vue {
     return <span>{item.devices}</span>;
   }
 
-  private selectUser(user: UserEntity): void {
-    console.log("Selected user:", user);
-    
-    this.selectedUser = user;
+  private onRowClick(item: UserEntity) {
+    this.selectedUser = item;
+  }
+
+  private closeModal() {
+    this.selectedUser = null;
   }
 
   render() {
     return (
-      <div>
+      <div class="home-container">
         <div class="header">
           <h2>User List</h2>
         </div>
-
         <Table
           columns={this.columns}
           items={this.users}
-          onRowClick={this.selectUser} 
+          on={{ 'row-click': this.onRowClick }}
         />
-
         {this.selectedUser && (
-          <div class="side-panel">
-            <h3>User Details</h3>
-            <p>
-              <strong>ID:</strong> {this.selectedUser.id}
-            </p>
-            <p>
-              <strong>Location:</strong> {this.selectedUser.location}
-            </p>
-            <p>
-              <strong>Devices:</strong> {this.selectedUser.devices}
-            </p>
-            <p>
-              <strong>Sessions:</strong> {this.selectedUser.sessions.length}
-            </p>
-            <p>
-              <strong>Created:</strong>{' '}
-              {new Date(this.selectedUser.created).toLocaleDateString()}
-            </p>
-          </div>
+          <UserModal
+            selectedUser={this.selectedUser}
+            on={{ close: this.closeModal }} 
+          />
         )}
       </div>
     );
   }
 }
-
