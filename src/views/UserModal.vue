@@ -1,12 +1,22 @@
 <template>
-  <div class="modal-overlay" @click.self="closeModal">
+  <div class="modal-overlay">
     <div class="modal-content">
       <button class="close-btn" @click="closeModal">✖</button>
       <h3>User Details</h3>
       <div class="user-info">
-        <p><span class="label">ID:</span> {{ selectedUser.id }}</p>
         <p><span class="label">Location:</span> {{ selectedUser.location }}</p>
         <p><span class="label">Devices:</span> {{ selectedUser.devices }}</p>
+        <p><span class="label">Developer:</span> {{ selectedUser.isDeveloper ? 'Yes' : 'No' }}</p>
+        <p><span class="label">Sessions:</span> {{ selectedUser.sessions.length }}</p>
+        <p><span class="label">Created:</span> {{ new Date(selectedUser.created).toLocaleDateString() }}</p>
+        <p><span class="label">Events:</span> {{ selectedUser.events }}</p>
+        <p><span class="label">Bucket:</span> {{ selectedUser.bucket }}</p>
+        <p><span class="label">Channels:</span> Push: {{ selectedUser.channels.push ? 'Yes' : 'No' }},
+          Email: {{ selectedUser.channels.email ? 'Yes' : 'No' }},
+          Webhook: {{ selectedUser.channels.webhook ? 'Yes' : 'No' }},
+          App Inbox: {{ selectedUser.channels.appInbox ? 'Yes' : 'No' }}
+        </p>
+        <p><span class="label">Email:</span> {{ selectedUser.attributes.email }}</p>
       </div>
     </div>
   </div>
@@ -27,36 +37,23 @@ export default {
 
 <style scoped>
 .modal-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 30%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  z-index: 1000;
+  width: 100%;
 }
 
 .modal-content {
   background: white;
-  padding: 20px;
-  width: 100%;
-  max-width: 350px;
-  height: 100%;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px 0 0 8px;
-  overflow-y: auto;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 15px;
 }
 
 .user-info p {
-  font-size: 16px;
+  font-size: 14px;
   margin: 10px 0;
   padding: 8px;
   background: #f6f9fb;
@@ -70,8 +67,8 @@ h3 {
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 16vh;
+  right: 21.5vw;
   background: none;
   border: none;
   font-size: 18px;
