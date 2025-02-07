@@ -19,6 +19,7 @@ import UserModal from './UserModal.vue';
 export default class Home extends Vue {
   users: Array<UserEntity> = generateSampleData();
   selectedUser: UserEntity | null = null;
+  isCreatingUser = false;
   sortKey: keyof UserEntity | null = null;
   sortOrder: 'asc' | 'desc' = 'asc';
 
@@ -53,42 +54,66 @@ export default class Home extends Vue {
 
   private onRowClick(item: UserEntity) {
     this.selectedUser = item;
+    this.isCreatingUser = false;
   }
-  
-  private closeModal() {
+
+  private openCreateUserModal() {
+    this.isCreatingUser = true;
     this.selectedUser = null;
   }
 
+  private closeModal() {
+    this.selectedUser = null;
+    this.isCreatingUser = false;
+  }
+
   private sortColumn(key: keyof UserEntity) {
-        if (this.sortKey === key) {
-          this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
-        } else {
-          this.sortKey = key;
-          this.sortOrder = 'asc';
-        }
-      }
+    if (this.sortKey === key) {
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortKey = key;
+      this.sortOrder = 'asc';
+    }
+  }
+
+  private handleCreateUser(newUser: UserEntity) {
+    this.users.push(newUser);
+    this.closeModal();
+  }
 
   render() {
     return (
       <div class="home-container">
         <div class="header">
           <h2>User List</h2>
+          <button class="create-user-btn" onClick={this.openCreateUserModal}>+ Create User</button>
         </div>
         <div class="content-container">
-          <div class={`table-container ${this.selectedUser ? 'with-details' : ''}`}>
+          <div class={`table-container ${this.selectedUser || this.isCreatingUser ? 'with-details' : ''}`}>
             <Table
               columns={this.columns}
               items={this.sortedUsers}
               on={{ 'row-click': this.onRowClick, 'sort': this.sortColumn }}
             />
           </div>
-          {this.selectedUser && (
-            <UserModal selectedUser={this.selectedUser} on={{ close: this.closeModal }} />
+          {(this.selectedUser || this.isCreatingUser) && (
+            <UserModal
+              selectedUser={this.selectedUser}
+              isCreatingUser={this.isCreatingUser}
+              users={this.users}
+              on={{
+                close: this.closeModal,
+                'create-user': this.handleCreateUser,
+              }}
+            />
           )}
         </div>
       </div>
     );
   }
 }
+
+
+
 
 

@@ -33,14 +33,7 @@ $table-header-color: #b2b7b9;
   flex: 0.87;
 }
 
-// .side-panel {
-//   width: 30%;
-//   min-width: 300px;
-//   background: white;
-//   padding: 16px;
-//   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
-//   border-left: 1px solid #e1e4e5;
-// }
+
 
 table {
   width: 100%;
@@ -67,4 +60,18 @@ table {
       cursor: pointer;
     }
   }
+}
+
+.create-user-btn{
+    background-color: lightblue;
+    border: 1px solid ;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: large;
+}
+
+.create-user-btn:hover{
+    background-color: lightcoral;
+    
 }
