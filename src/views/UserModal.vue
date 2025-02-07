@@ -1,23 +1,22 @@
 <template>
-  <div class="modal-overlay">
-    <div class="modal-content">
-      <button class="close-btn" @click="closeModal">✖</button>
-      <h3>User Details</h3>
-      <div class="user-info">
-        <p><span class="label">Location:</span> {{ selectedUser.location }}</p>
-        <p><span class="label">Devices:</span> {{ selectedUser.devices }}</p>
-        <p><span class="label">Developer:</span> {{ selectedUser.isDeveloper ? 'Yes' : 'No' }}</p>
-        <p><span class="label">Sessions:</span> {{ selectedUser.sessions.length }}</p>
-        <p><span class="label">Created:</span> {{ new Date(selectedUser.created).toLocaleDateString() }}</p>
-        <p><span class="label">Events:</span> {{ selectedUser.events }}</p>
-        <p><span class="label">Bucket:</span> {{ selectedUser.bucket }}</p>
-        <p><span class="label">Channels:</span> Push: {{ selectedUser.channels.push ? 'Yes' : 'No' }},
-          Email: {{ selectedUser.channels.email ? 'Yes' : 'No' }},
-          Webhook: {{ selectedUser.channels.webhook ? 'Yes' : 'No' }},
-          App Inbox: {{ selectedUser.channels.appInbox ? 'Yes' : 'No' }}
-        </p>
-        <p><span class="label">Email:</span> {{ selectedUser.attributes.email }}</p>
-      </div>
+  <div class="side-panel" v-if="selectedUser">
+    <button class="close-btn" @click="closeModal">✖</button>
+    <h3>User Details</h3>
+    <div class="user-info">
+      <p><span class="label">Location:</span> {{ selectedUser.location }}</p>
+      <p><span class="label">Devices:</span> {{ selectedUser.devices }}</p>
+      <p><span class="label">Developer:</span> {{ selectedUser.isDeveloper ? 'Yes' : 'No' }}</p>
+      <p><span class="label">Sessions:</span> {{ selectedUser.sessions.length }}</p>
+      <p><span class="label">Created:</span> {{ new Date(selectedUser.created).toLocaleDateString() }}</p>
+      <p><span class="label">Events:</span> {{ selectedUser.events }}</p>
+      <p><span class="label">Bucket:</span> {{ selectedUser.bucket }}</p>
+      <p><span class="label">Channels:</span> 
+        Push: {{ selectedUser.channels.push ? 'Yes' : 'No' }},
+        Email: {{ selectedUser.channels.email ? 'Yes' : 'No' }},
+        Webhook: {{ selectedUser.channels.webhook ? 'Yes' : 'No' }},
+        App Inbox: {{ selectedUser.channels.appInbox ? 'Yes' : 'No' }}
+      </p>
+      <p><span class="label">Email:</span> {{ selectedUser.attributes.email }}</p>
     </div>
   </div>
 </template>
@@ -36,15 +35,29 @@ export default {
 </script>
 
 <style scoped>
-.modal-overlay {
-  width: 100%;
-}
-
-.modal-content {
+.side-panel {
+  width: 300px;
+  height: 100%;
+  top: 15%;
   background: white;
   padding: 16px;
-  border-radius: 4px;
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+  border-left: 1px solid #e1e4e5;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: red;
 }
 
 h3 {
@@ -63,20 +76,5 @@ h3 {
 .label {
   font-weight: bold;
   color: #555;
-}
-
-.close-btn {
-  position: absolute;
-  top: 16vh;
-  right: 21.5vw;
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  color: #333;
-}
-
-.close-btn:hover {
-  color: red;
 }
 </style>
