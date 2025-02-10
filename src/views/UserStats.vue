@@ -2,12 +2,10 @@
     <div class="user-stats">
       <h2>User Statistics</h2>
   
-      <!-- Toggle Button -->
       <button @click="isChartView = !isChartView">
         {{ isChartView ? "Show Table" : "Show Chart" }}
       </button>
   
-      <!-- Table View -->
       <div v-if="!isChartView">
         <table cellspacing="1" border="1">
           <thead>
@@ -25,7 +23,6 @@
         </table>
       </div>
   
-      <!-- Chart View -->
       <highcharts v-if="isChartView" :options="chartOptions"></highcharts>
   
       <button @click="$router.push('/home')">Back to Home</button>
@@ -48,7 +45,6 @@
       };
     },
     computed: {
-      // Generate chart options dynamically
       chartOptions(): Highcharts.Options {
         return {
           chart: { type: "line" },
@@ -69,7 +65,6 @@
       this.loadUserStats();
     },
     watch: {
-      // Watch for changes in localStorage to update user stats dynamically
       userStats: {
         handler() {
           localStorage.setItem("userStats", JSON.stringify(this.userStats));
@@ -81,7 +76,7 @@
       loadUserStats() {
         const storedUsers = localStorage.getItem("users");
         if (!storedUsers) {
-          this.userStats = { "No Data": 0 }; // Prevent empty state
+          this.userStats = { "No Data": 0 }; 
           return;
         }
   
