@@ -82,7 +82,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.side-panel {
+/* .side-panel {
   position: fixed;
   top: 15%;
   right: 0;
@@ -94,7 +94,22 @@ export default Vue.extend({
   transition: right 0.3s ease-in-out;
   overflow-y: auto;
   border-left: 1px solid #e1e4e5;
+} */
+
+.side-panel {
+  position: fixed;
+  top: 25%;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background: white;
+  padding: 20px;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  overflow-y: auto;
+  border-left: 1px solid #e1e4e5;
 }
+
 
 .close-btn {
   position: absolute;

@@ -1,6 +1,3 @@
-
-
-
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import { Component, Vue } from 'vue-property-decorator';
@@ -23,6 +20,16 @@ export default class Home extends Vue {
   sortKey: keyof UserEntity | null = null;
   sortOrder: 'asc' | 'desc' = 'asc';
 
+  created() {
+    const storedUsers = localStorage.getItem('users');
+    if (storedUsers) {
+      this.users = JSON.parse(storedUsers);
+    } else {
+      this.users = generateSampleData();
+      localStorage.setItem('users', JSON.stringify(this.users));
+    }
+  }
+
   get sortedUsers() {
     if (!this.sortKey) return this.users;
     return [...this.users].sort((a, b) => {
@@ -38,6 +45,7 @@ export default class Home extends Vue {
     { title: 'User ID', render: this.renderFunc, sortable: true, key: 'id' },
     { title: 'Location', render: this.renderLocation, sortable: true, key: 'location' },
     { title: 'Devices', render: this.renderDevices, sortable: true, key: 'devices' },
+    { title: 'Actions', render: this.renderActions } 
   ];
 
   private renderFunc(item: UserEntity): VNode {
@@ -50,6 +58,12 @@ export default class Home extends Vue {
 
   private renderDevices(item: UserEntity): VNode {
     return <span>{item.devices}</span>;
+  }
+
+  private renderActions(item: UserEntity): VNode {
+    return (
+      <button onClick={() => this.deleteUser(item.id)} class="delete-btn">Delete</button>
+    );
   }
 
   private onRowClick(item: UserEntity) {
@@ -81,12 +95,19 @@ export default class Home extends Vue {
     this.closeModal();
   }
 
+  private deleteUser(userId: string) {
+    this.users = this.users.filter(user => user.id !== userId);
+    localStorage.setItem('users', JSON.stringify(this.users));
+    this.$emit('user-updated'); 
+  }
+
   render() {
     return (
       <div class="home-container">
         <div class="header">
           <h2>User List</h2>
           <button class="create-user-btn" onClick={this.openCreateUserModal}>+ Create User</button>
+          <button class="stats-btn" onClick={() => this.$router.push('/stats')}>View User Stats</button> 
         </div>
         <div class="content-container">
           <div class={`table-container ${this.selectedUser || this.isCreatingUser ? 'with-details' : ''}`}>
@@ -112,8 +133,3 @@ export default class Home extends Vue {
     );
   }
 }
-
-
-
-
-
