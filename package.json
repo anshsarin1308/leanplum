@@ -13,12 +13,16 @@
     "@fortawesome/fontawesome-free": "^5.15.2",
     "core-js": "^3.6.5",
     "date-fns": "^2.16.1",
+    "highcharts": "^12.1.2",
+    "highcharts-vue": "^2.0.1",
+    "l": "^0.6.0",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^9.1.2",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.2.0",
+    "vue2-highcharts": "^1.2.5"
   },
   "devDependencies": {
     "@types/jest": "^24.0.19",
@@ -72,6 +76,8 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
-    "testMatch": ["**/*.test.ts"]
+    "testMatch": [
+      "**/*.test.ts"
+    ]
   }
 }

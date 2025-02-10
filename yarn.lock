@@ -5173,6 +5173,16 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
+highcharts-vue@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/highcharts-vue/-/highcharts-vue-2.0.1.tgz#296bc6131caadb84edb30524cbd40e302976a52d"
+  integrity sha512-7yVaKvsWlx7OgmKFXE2D99fi/0tr2A85H4KUz3jL7CRQhAwvEvXgtDIyTBGLHJsOC5L9VlppAI7k6KfIi0j0hg==
+
+highcharts@^12.1.2:
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-12.1.2.tgz#826114935b3ffb6b99dc906da00f137667a67fbb"
+  integrity sha512-paZ72q1um0zZT1sS+O/3JfXVSOLPmZ0zlo8SgRc0rEplPFPQUPc4VpkgQS8IUTueeOBgIWwVpAWyC9tBYbQ0kg==
+
 highlight.js@^10.0.0:
   version "10.5.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.5.0.tgz#3f09fede6a865757378f2d9ebdcbc15ba268f98f"
@@ -6586,6 +6596,11 @@ klona@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.4.tgz#7bb1e3affb0cb8624547ef7e8f6708ea2e39dfc0"
   integrity sha512-ZRbnvdg/NxqzC7L9Uyqzf4psi1OM4Cuc+sJAkQPjO6XkQIJTNbfK2Rsmbw8fx1p2mkZdp2FZYo2+LwXYY/uwIA==
+
+l@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/l/-/l-0.6.0.tgz#1dac0e062ac94d29827facd8d0166aa5f196c56f"
+  integrity sha512-rB5disIyfKRBQ1xcedByHCcAmPWy2NPnjWo5u4mVVIPtathROHyfHjkloqSBT49mLnSRnupkpoIUOFCL7irCVQ==
 
 launch-editor-middleware@^2.2.1:
   version "2.2.1"
@@ -10450,6 +10465,11 @@ vue-template-es2015-compiler@^1.6.0, vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
+
+vue2-highcharts@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/vue2-highcharts/-/vue2-highcharts-1.2.5.tgz#4ab5ace0573d2e02a0cfd4029e3d7dbba2de2205"
+  integrity sha512-di7kuqZyqo77pmCs23s+wIyA1aBuKMxRJg871ggcj0Y1GopfF9j/cPlmwgjyIMaOHz4iQmvfn8hEDNOMW7etEQ==
 
 vue@^2.6.11:
   version "2.6.12"
