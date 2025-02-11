@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '../views/Home';
-import UserStats from '../views/UserStats.vue'; 
+import UserStats from '../views/UserStats.vue';
+import DeviceStats from '../views/DeviceStats';
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,11 @@ const routes: Array<RouteConfig> = [
     path: '/stats',
     name: 'user-stats',
     component: UserStats
+  },
+  {
+    path: '/device-stats',
+    name: 'device-stats',
+    component: DeviceStats
   }
 ];
 

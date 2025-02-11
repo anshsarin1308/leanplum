@@ -14,3 +14,5 @@ describe(Table, () => {
     expect(render).toHaveBeenCalledTimes(2)
   })
 })
+
+

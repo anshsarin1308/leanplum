@@ -11,10 +11,11 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
+    "@types/highcharts": "^7.0.0",
     "core-js": "^3.6.5",
     "date-fns": "^2.16.1",
-    "highcharts": "^12.1.2",
-    "highcharts-vue": "^2.0.1",
+    "highcharts": "^9.3.3",
+    "highcharts-vue": "^1.4.0",
     "l": "^0.6.0",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.1",

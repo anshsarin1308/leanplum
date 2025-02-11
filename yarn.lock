@@ -2,6 +2,15 @@
 # yarn lockfile v1
 
 
+"@achrinza/node-ipc@9.2.2":
+  version "9.2.2"
+  resolved "https://registry.yarnpkg.com/@achrinza/node-ipc/-/node-ipc-9.2.2.tgz#ae1b5d3d6a9362034eea60c8d946b93893c2e4ec"
+  integrity sha512-b90U39dx0cU6emsOvy5hxU4ApNXnE3+Tuo8XQZfiKTGelDwpMwBVgBP7QX6dGTcJgu/miyJuNJ/2naFBliNWEw==
+  dependencies:
+    "@node-ipc/js-queue" "2.0.3"
+    event-pubsub "4.3.0"
+    js-message "1.0.7"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.11", "@babel/code-frame@^7.8.3":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -1056,6 +1065,13 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@node-ipc/js-queue@2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@node-ipc/js-queue/-/js-queue-2.0.3.tgz#ac7fe33d766fa53e233ef8fedaf3443a01c5a4cd"
+  integrity sha512-fL1wpr8hhD5gT2dA1qifeVaoDFlQR5es8tFuKqjHX+kdOtdNHnxkVZbtIrR2rxnMFvehkjaZRNV2H/gPXlb0hw==
+  dependencies:
+    easy-stack "1.0.1"
+
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
@@ -1168,6 +1184,13 @@
   dependencies:
     "@types/minimatch" "*"
     "@types/node" "*"
+
+"@types/highcharts@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@types/highcharts/-/highcharts-7.0.0.tgz#88fc2140504dac329eb93d6e06a457c8db0d7f7e"
+  integrity sha512-YDevls0s9uqz6VEbchxp+NEaKssAPq5aDZgqEUpxOIUCQEncQtXxibp1w4lvgKyhM4qDejAcSZ+DKfA/kzqR0A==
+  dependencies:
+    highcharts "*"
 
 "@types/http-proxy-middleware@*":
   version "0.19.3"
@@ -1572,14 +1595,14 @@
     fork-ts-checker-webpack-plugin-v5 "npm:fork-ts-checker-webpack-plugin@^5.0.11"
 
 "@vue/cli-plugin-unit-jest@~4.5.0":
-  version "4.5.11"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-unit-jest/-/cli-plugin-unit-jest-4.5.11.tgz#d988e6e8420540954ceaf70fa050c469c45b69ab"
-  integrity sha512-PGpWz1RB9mfSJ5diTshFJUZsAschJBdLtJl7mmou/AVH2Yf8gTy3Zh9YZwkvhGt/wKXFbincmL6tyAQFGMa8Ow==
+  version "4.5.19"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-unit-jest/-/cli-plugin-unit-jest-4.5.19.tgz#3371f01bdf60ebd287c4cec0c3801f92c30ed6fe"
+  integrity sha512-yX61mpeU7DnjOv+Lxtjmr3pzESqBLIXeTK4MJpa/UdzrhnylHP4r6mCYETNLEYtxp8WZUXPjZFIzrKn5poZPJg==
   dependencies:
     "@babel/core" "^7.11.0"
     "@babel/plugin-transform-modules-commonjs" "^7.9.6"
     "@types/jest" "^24.0.19"
-    "@vue/cli-shared-utils" "^4.5.11"
+    "@vue/cli-shared-utils" "^4.5.19"
     babel-core "^7.0.0-bridge.0"
     babel-jest "^24.9.0"
     babel-plugin-transform-es2015-modules-commonjs "^6.26.2"
@@ -1678,6 +1701,24 @@
     semver "^6.1.0"
     strip-ansi "^6.0.0"
 
+"@vue/cli-shared-utils@^4.5.19":
+  version "4.5.19"
+  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.5.19.tgz#cc389b1de1b05073804c0fe9b4b083b928ef6130"
+  integrity sha512-JYpdsrC/d9elerKxbEUtmSSU6QRM60rirVubOewECHkBHj+tLNznWq/EhCjswywtePyLaMUK25eTqnTSZlEE+g==
+  dependencies:
+    "@achrinza/node-ipc" "9.2.2"
+    "@hapi/joi" "^15.0.1"
+    chalk "^2.4.2"
+    execa "^1.0.0"
+    launch-editor "^2.2.1"
+    lru-cache "^5.1.1"
+    open "^6.3.0"
+    ora "^3.4.0"
+    read-pkg "^5.1.1"
+    request "^2.88.2"
+    semver "^6.1.0"
+    strip-ansi "^6.0.0"
+
 "@vue/component-compiler-utils@^3.1.0", "@vue/component-compiler-utils@^3.1.2":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@vue/component-compiler-utils/-/component-compiler-utils-3.2.0.tgz#8f85182ceed28e9b3c75313de669f83166d11e5d"
@@ -1707,9 +1748,9 @@
   integrity sha512-LIZMuJk38pk9U9Ur4YzHjlIyMuxPlACdBIHH9/nGYVTsaGKOSnSuELiE8vS9wa+dJpIYspYUOqk+L1Q4pgHQHQ==
 
 "@vue/test-utils@^1.0.3":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-1.1.2.tgz#fdb487448dceefeaf3d01d465f7c836a3d666dbc"
-  integrity sha512-utbIL7zn9c+SjhybPwh48lpWCiluFCbP1yyRNAy1fQsw/6hiNFioaWy05FoVAFIZXC5WwBf+5r4ypfM1j/nI4A==
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-1.3.6.tgz#6656bd8fa44dd088b4ad80ff1ee28abe7e5ddf87"
+  integrity sha512-udMmmF1ts3zwxUJEIAj5ziioR900reDrt6C9H3XpWPsLBx2lpHKoA4BTdd9HNIYbkGltWw+JjWJ+5O6QBwiyEw==
   dependencies:
     dom-event-types "^1.0.0"
     lodash "^4.17.15"
@@ -3965,7 +4006,7 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
-easy-stack@^1.0.1:
+easy-stack@1.0.1, easy-stack@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/easy-stack/-/easy-stack-1.0.1.tgz#8afe4264626988cabb11f3c704ccd0c835411066"
   integrity sha512-wK2sCs4feiiJeFXn3zvY0p41mdU5VUgbgs1rNsc/y5ngFUijdWd+iIN8eoyuZHKB8xN6BL4PdWmzqFmxNg6V2w==
@@ -5173,15 +5214,20 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
-highcharts-vue@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/highcharts-vue/-/highcharts-vue-2.0.1.tgz#296bc6131caadb84edb30524cbd40e302976a52d"
-  integrity sha512-7yVaKvsWlx7OgmKFXE2D99fi/0tr2A85H4KUz3jL7CRQhAwvEvXgtDIyTBGLHJsOC5L9VlppAI7k6KfIi0j0hg==
+highcharts-vue@^1.4.0:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/highcharts-vue/-/highcharts-vue-1.4.3.tgz#8cb7452c005282ee70f237021af93725d1c9a4f4"
+  integrity sha512-qIy9EFuLIgOw+reNkTvu0pvMBcSE0BAPtONAqZoEl0qaAIpGxiyXqhRNPDufWieSC0YlybpCznxE8EK19Kcg+A==
 
-highcharts@^12.1.2:
+highcharts@*:
   version "12.1.2"
   resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-12.1.2.tgz#826114935b3ffb6b99dc906da00f137667a67fbb"
   integrity sha512-paZ72q1um0zZT1sS+O/3JfXVSOLPmZ0zlo8SgRc0rEplPFPQUPc4VpkgQS8IUTueeOBgIWwVpAWyC9tBYbQ0kg==
+
+highcharts@^9.3.3:
+  version "9.3.3"
+  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-9.3.3.tgz#ae62178de788fd7934431aa26b8e250b8073c541"
+  integrity sha512-QeOvm6cifeZYYdTLm4IxZsXcOE9c4xqfs0z0OJJ0z7hhA9WG0rmcVAyuIp5HBl/znjA/ayYHmpYjBYD/9PG4Fg==
 
 highlight.js@^10.0.0:
   version "10.5.0"

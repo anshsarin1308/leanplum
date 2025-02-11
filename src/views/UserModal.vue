@@ -5,7 +5,6 @@
     <h3 v-if="!isCreatingUser">User Details</h3>
     <h3 v-else>Create New User</h3>
 
-    <!-- Display User Details -->
     <div v-if="selectedUser && !isCreatingUser" class="user-info">
       <p><span class="label">Location:</span> {{ selectedUser.location }}</p>
       <p><span class="label">Devices:</span> {{ selectedUser.devices }}</p>
@@ -24,7 +23,6 @@
       <p><span class="label">Email:</span> {{ selectedUser.attributes.email }}</p>
     </div>
 
-    <!-- Create New User Form -->
     <form v-if="isCreatingUser" class="user-form" @submit.prevent="submitForm">
       <label for="name">Name:</label>
       <input id="name" type="text" v-model="newUser.id" required />

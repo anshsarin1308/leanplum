@@ -7,6 +7,7 @@ import { ColumnDescriptor, Table } from '../components/Table';
 import { VNode } from 'vue';
 import UserModal from './UserModal.vue';
 
+
 @Component({
   name: "Home",
   components: {
@@ -108,6 +109,9 @@ export default class Home extends Vue {
           <h2>User List</h2>
           <button class="create-user-btn" onClick={this.openCreateUserModal}>+ Create User</button>
           <button class="stats-btn" onClick={() => this.$router.push('/stats')}>View User Stats</button> 
+          <button class="stats-btn" onClick={() => this.$router.push('/device-stats')}>
+            View Device Stats
+          </button>
         </div>
         <div class="content-container">
           <div class={`table-container ${this.selectedUser || this.isCreatingUser ? 'with-details' : ''}`}>

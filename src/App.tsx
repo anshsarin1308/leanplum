@@ -1,5 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
 
+
 import './App.scss';
 
 @Component({name: "App"})
