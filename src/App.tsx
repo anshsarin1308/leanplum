@@ -10,6 +10,10 @@ export default class App extends Vue {
       <div id="app">
         <div id="nav">
           <router-link to="/home">Home</router-link>
+          <router-link to="/stats">User Stats</router-link>
+
+          <router-link to="/device-stats">Device stats</router-link>
+
         </div>
         <router-view/>
       </div>
