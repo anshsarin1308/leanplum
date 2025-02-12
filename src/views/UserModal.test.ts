@@ -37,7 +37,7 @@ describe('UserModal.vue', () => {
   it('renders correctly when viewing an existing user', async () => {
     wrapper.setProps({ selectedUser: mockUsers[1], isCreatingUser: false });
 
-    await Vue.nextTick(); // Ensure DOM updates
+    await Vue.nextTick(); 
 
     expect(wrapper.find('h3').exists()).toBe(true);
     expect(wrapper.find('h3').text()).toBe('User Details');
@@ -59,7 +59,7 @@ describe('UserModal.vue', () => {
     await Vue.nextTick();
 
     const emailInput = wrapper.find('input#email');
-    await emailInput.setValue('test@example.com'); // Duplicate email
+    await emailInput.setValue('test@example.com'); 
     await wrapper.find('form').trigger('submit.prevent');
 
     await Vue.nextTick();

@@ -67,13 +67,14 @@ export default class DeviceStats extends Vue {
       this.deviceStats = { 'No Data': 0 };
       return;
     }
-
+  
     const users: Array<UserEntity> = JSON.parse(storedUsers) || [];
     this.deviceStats = users.reduce((acc, user) => {
-      acc[user.location] = (acc[user.location] || 0) + user.devices;
+      acc[user.location] = (acc[user.location] || 0) + Number(user.devices);
       return acc;
     }, {} as Record<string, number>);
   }
+  
 
   private toggleView() {
     this.isChartView = !this.isChartView;

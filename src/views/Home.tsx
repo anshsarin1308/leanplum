@@ -93,8 +93,10 @@ export default class Home extends Vue {
 
   private handleCreateUser(newUser: UserEntity) {
     this.users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(this.users)); 
     this.closeModal();
   }
+  
 
   private deleteUser(userId: string) {
     this.users = this.users.filter(user => user.id !== userId);
@@ -108,10 +110,7 @@ export default class Home extends Vue {
         <div class="header">
           <h2>User List</h2>
           <button class="create-user-btn" onClick={this.openCreateUserModal}>+ Create User</button>
-          {/* <button class="stats-btn" onClick={() => this.$router.push('/stats')}>View User Stats</button> 
-          <button class="stats-btn" onClick={() => this.$router.push('/device-stats')}>
-            View Device Stats
-          </button> */}
+         
         </div>
         <div class="content-container">
           <div class={`table-container ${this.selectedUser || this.isCreatingUser ? 'with-details' : ''}`}>

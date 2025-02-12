@@ -53,13 +53,13 @@ describe('Home Component', () => {
   ];
 
   beforeEach(() => {
-    // Mock localStorage
+   
     Storage.prototype.getItem = jest.fn();
     Storage.prototype.setItem = jest.fn();
     
     wrapper = shallowMount(Home, {
       stubs: {
-        UserModal: true // Stub the UserModal component
+        UserModal: true 
       }
     });
     (wrapper.vm as any).users = mockUsers;

@@ -32,7 +32,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Options } from 'highcharts';
-import { SeriesOptionsType, SeriesLineOptions } from 'highcharts';
+import {  SeriesLineOptions } from 'highcharts';
 import { UserEntity } from '../models/UsersEntity';
 
 export default Vue.extend({
