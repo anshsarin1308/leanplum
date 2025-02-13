@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { shallowMount, Wrapper } from '@vue/test-utils';
 import Home from './Home';
-import { Table } from '../components/Table';
-import { UserEntity } from '../models/UsersEntity';
+import { Table } from 'src/components/Table';
+import { UserEntity } from 'src/models/UsersEntity';
 
 jest.mock('./UserModal.vue', () => ({
   name: 'UserModal',

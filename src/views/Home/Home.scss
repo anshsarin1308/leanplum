@@ -63,7 +63,7 @@ table {
 }
 
 .create-user-btn{
-    
+    // width: 200px;
     padding: 10px;
     background-color: #28a745;
     color: white;
@@ -76,20 +76,10 @@ table {
     
 }
 
-.stats-btn {
-    margin-left: -50px;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .stats-btn:hover {
-    background-color: red;
-  }
+
 
   .delete-btn {
+    // width: 75px;
     background-color: red;
     color: white;
     border: none;

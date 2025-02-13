@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { shallowMount } from '@vue/test-utils';
 import Vue from 'vue';
-import UserModal from './UserModal.vue';
-import { UserEntity } from '../models/UsersEntity';
+import UserModal from './UserModal';
+import { UserEntity } from '../../models/UsersEntity';
 
 describe('UserModal.vue', () => {
   let wrapper: any;

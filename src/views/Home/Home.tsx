@@ -2,10 +2,10 @@
 
 import { Component, Vue } from 'vue-property-decorator';
 import './Home.scss';
-import { generateSampleData, UserEntity } from '../models/UsersEntity';
-import { ColumnDescriptor, Table } from '../components/Table';
+import { generateSampleData, UserEntity } from '../../models/UsersEntity';
+import { ColumnDescriptor, Table } from '../../components/Table';
 import { VNode } from 'vue';
-import UserModal from './UserModal.vue';
+import UserModal from '../UserModal/UserModal';
 
 
 @Component({

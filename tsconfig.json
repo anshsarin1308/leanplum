@@ -26,7 +26,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx"
-, "src/views/UserModal.vue"  ],
+, "src/views/UserModal.tsx"  ],
   "exclude": [
     "node_modules"
   ]

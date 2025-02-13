@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '../views/Home';
-import UserStats from '../views/UserStats.vue';
-import DeviceStats from '../views/DeviceStats';
+import Home from '../views/Home/Home';
+import UserStats from '../views/UserStats/UserStats';
+import DeviceStats from '../views/DeviceStats/DeviceStats';
 
 Vue.use(VueRouter);
 

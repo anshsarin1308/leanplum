@@ -1,7 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { Options } from 'highcharts';
 import {  SeriesColumnOptions } from 'highcharts';
-import { UserEntity } from '../models/UsersEntity';
+import { UserEntity } from '../../models/UsersEntity';
 import './DeviceStats.scss';
 
 @Component({
